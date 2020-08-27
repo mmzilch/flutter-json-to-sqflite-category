@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return FutureBuilder(
       future: DatabaseHelper.instance.getAllCategoriesfromDb(),
       builder: (BuildContext context, AsyncSnapshot snapshot) {
-        print('snapshotdata>>>'+snapshot.data.length.toString());
+        print('snapshotdata>>>'+snapshot.data.toString());
         if (!snapshot.hasData) {
           return 
           // Bluebox();
@@ -99,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(fontSize: 20.0),
                 ),
                 title: 
-                Text("Name: ${snapshot.data[index]}"),
-                subtitle: Text('Category: ${snapshot.data[index]}'),
+                Text('Name: ${snapshot.data[index].categoryName}'),
+                // subtitle: Text('Category: ${snapshot.data[index].categoryName}'),
               );
             },
           );

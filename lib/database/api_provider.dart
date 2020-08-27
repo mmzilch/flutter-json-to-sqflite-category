@@ -12,6 +12,7 @@ class ApiProvider {
   var list = List<Map<String, dynamic>>.from(json.decode(response.body)['categories']);
   var result = list.map((e){
 DatabaseHelper.instance.createFood(Categories.fromJson(e));
+print("e>>>"+e.toString());
   });
   print('apiproresultmap>>'+result.toString());
   return list;
